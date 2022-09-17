@@ -9,8 +9,9 @@ app.use(router)
 
 /* Pinia */
 import { createPinia } from 'pinia';
+import { createORM } from 'pinia-orm'
 
-const pinia = createPinia();
+const pinia = createPinia().use(createORM());
 app.use(pinia)
 
 pinia.use(({ store }) => {
