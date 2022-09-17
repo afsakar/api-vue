@@ -1,0 +1,24 @@
+{
+    "yes": "Evet",
+    "no": "Hayır",
+    "deleteNotificationMessage": "Bu kaydı silmek istediğinize emin misiniz?",
+
+    "menu": {
+        "home": "Anasayfa",
+        "profile": "Profil",
+        "logout": "Çıkış Yap",
+        "login": "Giriş Yap",
+        "search": "Ara"
+    },
+
+    "books": {
+        "listTitle": "Kitap Listesi",
+        "notFound": "Herhangi bir kitap bulunamadı.",
+        "createPageTitle": "Yeni Kitap Ekle",
+        "updatePageTitle": "Kitap Düzenle ({title})"
+    },
+
+    "datatable": {
+        "paginationMessage": "{totalRecords} kayıttan {first} ile {last} arası kayıt gösteriliyor"
+    }
+}
