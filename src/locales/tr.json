@@ -15,10 +15,19 @@
         "listTitle": "Kitap Listesi",
         "notFound": "Herhangi bir kitap bulunamadı.",
         "createPageTitle": "Yeni Kitap Ekle",
-        "updatePageTitle": "Kitap Düzenle ({title})"
+        "updatePageTitle": "Kitap Düzenle ({title})",
+        "fields": {
+            "id": "ID",
+            "title": "Başlık",
+            "description": "Açıklama",
+            "rating": "Puanlama"
+        }
     },
 
     "datatable": {
-        "paginationMessage": "{totalRecords} kayıttan {first} ile {last} arası kayıt gösteriliyor"
+        "paginationMessage": "{totalRecords} kayıttan {first} ile {last} arası kayıt gösteriliyor",
+        "addNew": "Yeni ekle",
+        "search": "Ara",
+        "actions": "İşlemler"        
     }
 }

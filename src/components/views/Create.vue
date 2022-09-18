@@ -4,7 +4,8 @@
             <div class="flex items-center justify-between mb-5">
                 <h1 class="text-xl font-semibold">{{ t('books.createPageTitle') }}</h1>
                 <router-link to="/">
-                    <Button label="Go back" icon="pi pi-arrow-left" class="p-button-sm p-button-secondary" />
+                    <Button label="Go back" icon="pi pi-arrow-left" class="p-button-sm p-button-secondary"
+                        @click="store.errors = {}" />
                 </router-link>
             </div>
             <form @submit.prevent="save">
@@ -21,12 +22,12 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue';
-import { useBookStore } from '../stores/bookStore';
-import { useAuthStore } from '../stores/authStore';
-import { useI18n } from 'vue-i18n'
 import Textarea from 'primevue/textarea';
 import Editor from 'primevue/editor';
+import { computed, onMounted, ref } from 'vue';
+import { useBookStore } from '../../stores/bookStore';
+import { useAuthStore } from '../../stores/authStore';
+import { useI18n } from 'vue-i18n'
 
 const store = useBookStore()
 

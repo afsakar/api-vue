@@ -51,8 +51,8 @@ export const useBookStore = defineStore('books', {
                     router.push('/')
                     this.toast.add({severity:'success', summary: 'Success!', detail:'Book updated successfully.', life: 3000})
                 }).catch(err => {
-                    this.resp_error(err)
-                    return err
+                    this.resp_error(err.response.data.errors)
+                    return err.response.data.errors
                 })
             })
         },

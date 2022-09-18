@@ -47,15 +47,6 @@ import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import '/node_modules/primeflex/primeflex.css'
 
-import { createI18n } from 'vue-i18n'
-import messages from '@intlify/vite-plugin-vue-i18n/messages'
-let language = window.navigator.userLanguage || window.navigator.language;
-
-const i18n = createI18n({
-  locale: localStorage.getItem('lang') || language.slice(0,2) || 'tr',
-  messages
-})
-
 app.use(PrimeVue, {
   ripple: true,
   inputStyle: 'filled',
@@ -78,5 +69,22 @@ app.config.globalProperties.$moment = function(date){
 return moment(date)
 };
 
+/* I18n */
+import { createI18n } from 'vue-i18n'
+import messages from '@intlify/vite-plugin-vue-i18n/messages'
+let language = window.navigator.userLanguage || window.navigator.language;
+
+const i18n = createI18n({
+  locale: localStorage.getItem('lang') || language.slice(0,2) || 'tr',
+  messages
+})
+
 app.use(i18n)
+
+import AdminLayout from "./components/layouts/AdminLayout.vue"
+import MainLayout from "./components/layouts/MainLayout.vue"
+
+app.component('admin-layout', AdminLayout)
+app.component('main-layout', MainLayout)
+
 app.mount('#app');

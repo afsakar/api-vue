@@ -7,6 +7,7 @@ export const useAuthStore = defineStore('auth', {
         token: localStorage.getItem('token') || '',
         user: {},
         userInfo: JSON.parse(localStorage.getItem('userInfo')) || {},
+        errors: []
     }),
     actions: {
         async login(user) {
@@ -25,8 +26,10 @@ export const useAuthStore = defineStore('auth', {
                         resolve(resp)
                     })
                     .catch(err => {
-                        this.auth_error()
+                        this.auth_error(err.response.data)
+                        console.log(err)
                         reject(err)
+                        return err
                     })
                 })
             })
@@ -46,8 +49,9 @@ export const useAuthStore = defineStore('auth', {
             this.token = token
             this.user = user
         },
-        auth_error(){
+        auth_error(err){
             this.status = 'error'
+            this.errors = err.errors
             localStorage.removeItem('token')
             localStorage.removeItem('userInfo')
         },
